@@ -77,7 +77,7 @@
         event.preventDefault();
         thisProduct.processOrder();
       });
-
+      
       for (let input of thisProduct.formInputs) {
         input.addEventListener('change', function() {
           thisProduct.processOrder();
@@ -133,11 +133,12 @@
               }
             }
           }
-          // update calculated price in the HTML
-          thisProduct.priceElem.innerHTML = price;
         }
+        // update calculated price in the HTML
+        thisProduct.priceElem.innerHTML = price;
       }
     }
+    
     renderInMenu() {
       const thisProduct = this;
 
@@ -159,7 +160,7 @@
 
       thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
       thisProduct.form = thisProduct.element.querySelector(select.menuProduct.form);
-      thisProduct.formInputs = thisProduct.form.querySelector(select.all.formInputs);
+      thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
     }
